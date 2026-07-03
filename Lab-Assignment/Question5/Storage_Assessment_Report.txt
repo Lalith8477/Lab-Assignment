@@ -1,5 +1,0 @@
-Storage Report
-
-Storage information collected using Linux commands.
-
-Everything is working normally.
