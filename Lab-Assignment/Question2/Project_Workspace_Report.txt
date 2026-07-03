@@ -1,0 +1,32 @@
+SECURE PROJECT WORKSPACE SETUP REPORT
+
+Command 1:
+mkdir ProjectWorkspace
+mkdir ProjectWorkspace/Documents
+mkdir ProjectWorkspace/Reports
+Observation: Project directory and subdirectories were created successfully.
+
+Command 2:
+tree ProjectWorkspace
+Observation: Command not found, structure verified using alternative methods.
+
+Command 3:
+ls -ld ProjectWorkspace
+Observation: Shows default permissions of the directory.
+
+Command 4:
+chmod 750 ProjectWorkspace
+ls -ld ProjectWorkspace
+Observation: Permissions changed to drwxr-x---, improving security.
+
+Command 5:
+umask
+Output: 0022
+Observation: Defines default permission mask for new files.
+
+OWNERSHIP:
+Owner: lalith
+Group: lalith
+
+FINAL CONCLUSION:
+A secure workspace was created with controlled access permissions to protect project data.

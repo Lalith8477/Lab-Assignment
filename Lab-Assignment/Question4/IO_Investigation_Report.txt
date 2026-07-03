@@ -1,0 +1,43 @@
+FILE ACCESS AND I/O INVESTIGATION REPORT
+
+Command 1:
+echo "Hello Linux" > sample.txt
+Observation: File created using output redirection.
+
+Command 2:
+lsof sample.txt
+Observation: Shows processes accessing file (minimal output in this case).
+
+Command 3:
+ls -l /proc/$$/fd
+Output:
+0 -> /dev/pts/0
+1 -> /dev/pts/0
+2 -> /dev/pts/0
+255 -> /dev/pts/0
+Observation: Displays file descriptors of current shell.
+
+Command 4:
+ls > output.txt
+Observation: Redirects standard output to a file.
+
+Command 5:
+cat output.txt
+Output: error.txt output.txt sample.txt
+Observation: Displays directory listing stored in file.
+
+Command 6:
+ls wrongfile 2> error.txt
+Observation: Redirects error output to file.
+
+Command 7:
+cat error.txt
+Output: ls: cannot access 'wrongfile': No such file or directory
+Observation: Error message stored correctly in file.
+
+Command 8:
+ulimit -a
+Observation: Displays system resource limits.
+
+FINAL CONCLUSION:
+Linux uses file descriptors to manage input/output. Output and error streams can be redirected independently.
