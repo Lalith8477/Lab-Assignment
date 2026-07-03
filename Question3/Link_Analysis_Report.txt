@@ -1,0 +1,52 @@
+FILE SYSTEM AND LINK ANALYSIS REPORT
+
+Command 1:
+echo "Linux Lab File" > original.txt
+
+Observation:
+A file named original.txt was created and data was written into it.
+
+Command 2:
+ln original.txt hardlink.txt
+
+Observation:
+A hard link was created. Both files share the same inode and point to the same data.
+
+Command 3:
+ln -s original.txt softlink.txt
+
+Observation:
+A symbolic link named softlink.txt was created which points to original.txt.
+
+Command 4:
+ls -li
+
+Observation:
+Hard link and original file share the same inode number, while symbolic link has a different inode.
+
+Command 5:
+rm original.txt
+
+Observation:
+Original file was deleted. Hard link still works but symbolic link becomes broken.
+
+Command 6:
+cat hardlink.txt
+
+Output:
+Linux Lab File
+
+Observation:
+Hard link still works because it directly references the inode.
+
+Command 7:
+cat softlink.txt
+
+Output:
+cat: softlink.txt: No such file or directory
+
+Observation:
+Symbolic link failed because the original file path no longer exists.
+
+Final Conclusion:
+Hard links remain functional even after deletion of the original file because they share the same inode. Symbolic links break when the original file is removed because they depend on the file path.
